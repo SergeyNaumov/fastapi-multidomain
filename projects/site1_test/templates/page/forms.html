@@ -1,0 +1,19 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-5">Работа с формами</h1>
+  
+</div>
+<div id="app_forms">
+  <p>Формы обрабатываются на основе <a href="/models">моделей</a>. </p>
+
+  <hr>
+  <h2 class="display-6">
+      Пример работы формы без ajax:<br>
+      <small>(отправка через formdata)</small>
+  </h2>
+
+  {% include '/page/forms/form_tasks_without_ajax.html' %}
+  
+  <hr>
+  <h2>Пример работы формы с ajax:</h2>
+  {% include '/page/forms/form_tasks_with_ajax.html' %}
+</div>

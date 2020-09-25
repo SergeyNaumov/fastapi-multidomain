@@ -1,0 +1,14 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Работа с моделями</h1>
+  
+</div>
+<div>
+  <p>Модель позволяет указать список полей в таблице базы данных и их типы, а затем на основе этого описание осуществлять проверку форм</p>
+</div>
+
+{% for n in last_news %}
+  <div>
+    <div>Заголовок новости: {{ n.header }}</div>
+    <div>Анонс: {{n.anons}}</div>
+  </div>
+{% endfor %}

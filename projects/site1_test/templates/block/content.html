@@ -1,0 +1,7 @@
+<div class="content">
+    {% if page_type%}
+      {% include 'page/' + page_type + '.html' %}
+    {% else%}
+      <p>Не найдена переменная page_type</p>
+    {% endif %}
+</div>

@@ -1,0 +1,65 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Главное</h1>
+  <p class="lead">(Обзор возможностей "движка" cms)</p>
+</div>
+<div id="app_main">
+  <p>Каждый сайт базируется на <b>проекте</b> и <b>шаблоне</b>. В папке проекта находятся контроллеры, отвечающие за бизнес-логику, тогда как  а в папке шаблона только представление: шаблоны на основе jinja2, картинки, js, css</p>
+  <p>
+    В папке с обязательно должно находится:
+    <ul>
+      <li>Роутер проекта (файл route.py)</li>
+      <li>Описание моделей (файл model_list.py)</li>
+    </ul>
+  </p>
+  <p>
+    Вот <a href="" class="spoiler" @click.prevent="spoiler1_show=!spoiler1_show">пример файла route.py (основного роутера)</a>:
+    <div v-show="spoiler1_show">
+      <pre><code data-language="python">{% include '/page/main/pre_route.py' %}</code></pre>
+      <p>Обратите внимание, что для удобства чтения route.py может включать в себя дочерние роутеры (в нашем примере это form_routes)</p>
+    </div>
+  </p>
+  <p><a href="" class="spoiler" @click.prevent="spoiler2_show=!spoiler2_show">Описание моделей</a> (файл model_list.py)</p>
+  <div v-show="spoiler2_show">
+    <pre><code data-language="python">{% include '/page/main/pre_model_list.py' %}</code></pre>
+    
+  </div>
+  {% if 0%}
+  <pre>
+    project_folder
+  
+    models (папка с моделями) / 
+      model1.py
+      model2.py
+      model3.py
+      ...
+
+
+    template (папка с шаблоном проекта)
+    model_list.py (модуль для возврата моделей
+    config.py (файл конфигурации для проекта)
+    route.py  (основной роутер проекта)
+  </pre>
+  {% endif %}
+  <p><a href="" class="spoiler" @click.prevent="spoiler3_show=!spoiler3_show">Структура папок для каждого проекта</a></p>
+  <pre v-show="spoiler3_show">
+    .
+    └── project_folder/
+        ├── models (папка с моделями) / 
+        │   ├── model1.py
+        │   ├── model2.py
+        │   ├── model3.py
+        │   └── ...
+        ├── template (папка с шаблоном проекта)
+        ├── model_list.py (модуль для возврата моделей)
+        ├── config.py (файл конфигурации для проекта)
+        └── route.py  (основной роутер проекта)
+  </pre>
+</div>
+{% if 0%}
+  {% for n in last_news %}
+    <div>
+      <div>Заголовок новости: {{ n.header }}</div>
+      <div>Анонс: {{n.anons}}</div>
+    </div>
+  {% endfor %}
+{% endif%}
