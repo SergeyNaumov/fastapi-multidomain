@@ -89,7 +89,7 @@ def to_json(data):
 
 class FreshDB():
     def go_connect(self,arg):
-      self.connect = pymysql.connect(arg['host'], arg['user'], arg['password'], arg['dbname'])
+      self.connect = pymysql.connect(host=arg['host'], user=arg['user'], password=arg['password'], database=arg['dbname'])
       self.connect.ping(reconnect=True)
 
 

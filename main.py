@@ -20,7 +20,7 @@ async def for_all_requests(request: Request,call_next):
   global prev_domain,routers
   if multisites:
       host=request.headers['host']
-      
+      print('host:',host)
       if prev_domain !=host:
           app.routes.clear()
           

@@ -99,7 +99,11 @@ class Engine():
       self.vars[name]=value
 
     self.db.set_tmpl_saver(tmpl_saver)
-    self.template_folder='./projects/'+project['folder']+'/templates'
+    if project['folder']:
+      self.template_folder='./templates/'+project['folder']
+    else:
+      self.template_folder='./projects/'+project['module_folder']+'/templates/'
+    
 
 
   def set_template_folder(self,new_folder):
@@ -114,6 +118,7 @@ class Engine():
       return self.error
 
     full_path=self.template_folder + '/' +self.main_template
+    print('full_path:',full_path)
     if( not os.path.isfile(full_path)):
       return 'file not found: ' + full_path
     
